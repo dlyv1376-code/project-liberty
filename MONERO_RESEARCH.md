@@ -109,3 +109,31 @@ No consensus mechanism, tokenomics, cryptographic modifications, or production i
 - Official technical specifications: https://docs.getmonero.org/technical-specs/
 - Official Monero documentation: https://docs.getmonero.org/
 - Official project information: https://www.getmonero.org/resources/about/
+
+
+## 3. Node and Wallet Architecture
+
+### 3.1 Monero Daemon
+
+The monerod daemon:
+- Connects to the P2P network.
+- Downloads and validates blockchain data.
+- Maintains the local blockchain database.
+- Does not store or access wallet private keys.
+
+### 3.2 Wallet Architecture
+
+Wallet functionality is separated from the daemon.
+Wallets communicate with the node through defined interfaces.
+
+### 3.3 PROJECT LIBERTY Research Notes
+
+Potentially reusable architectural principles:
+- Separation of node and wallet responsibilities.
+- Local control of private keys.
+- Independent node operation.
+- Clearly defined communication interfaces.
+
+No implementation decisions are finalized.
+All components must undergo independent security review.
+
