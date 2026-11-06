@@ -137,3 +137,84 @@ Potentially reusable architectural principles:
 No implementation decisions are finalized.
 All components must undergo independent security review.
 
+
+4. Cryptographic Privacy Architecture
+
+Status: Research — No implementation decisions approved.
+
+4.1 Ring Signatures
+
+Purpose:
+
+- Obscure the actual spent output among decoy outputs.
+- Make transaction input tracing more difficult.
+- Provide plausible deniability.
+
+Modern Monero uses CLSAG signatures.
+
+Research requirements:
+
+- Understand ring construction.
+- Study decoy selection.
+- Understand linkability and double-spend prevention.
+- Review security assumptions.
+
+4.2 Stealth Addresses
+
+Purpose:
+
+- Generate unique one-time recipient addresses.
+- Prevent direct publication of the recipient's public wallet address.
+- Reduce the ability to link incoming payments.
+
+Research requirements:
+
+- Study public and private view keys.
+- Study transaction public keys.
+- Understand one-time output key derivation.
+- Review wallet scanning and recovery.
+
+4.3 Ring Confidential Transactions (RingCT)
+
+Purpose:
+
+- Conceal transaction amounts.
+- Allow verification of transaction balance.
+- Prevent unauthorized creation of additional currency.
+
+Important technologies:
+
+- Pedersen commitments.
+- CLSAG signatures.
+- Bulletproofs+ range proofs.
+
+Research requirements:
+
+- Study commitment construction.
+- Understand range proofs.
+- Study balance verification.
+- Review transaction validation.
+
+4.4 PROJECT LIBERTY Security Principles
+
+Proposed principles:
+
+1. Use established and independently reviewed cryptographic constructions.
+2. Do not invent proprietary cryptographic algorithms without expert research.
+3. Preserve independent verification of transactions.
+4. Protect user keys and recovery mechanisms.
+5. Require independent security audits before production deployment.
+
+4.5 Open Research Questions
+
+- Which Monero cryptographic components can be reused?
+- What are the licensing and implementation requirements?
+- What changes would require a new cryptographic audit?
+- How can CryptoPhoto encryption remain independent of blockchain transaction privacy?
+- What privacy guarantees can realistically be provided?
+
+4.6 Current Status
+
+Research only.
+
+No cryptographic modifications or implementation decisions have been approved.
